@@ -26,8 +26,6 @@ Estas rutas están protegidas mediante lógica de frontend, por lo tanto:
 2. Luego debe **iniciar sesión** (login).
 3. Al autenticarse correctamente, se accede al contenido protegido mediante el token almacenado.
 
-
-
 ## Tecnologías utilizadas
 
 - **React** 19
@@ -53,14 +51,14 @@ git clone https://github.com/Javierdigital85/hotelinking-frontend
 cd hotelinking-frontend
 ```
 
-### 2. Clona el repositorio
+### 2. Instala las dependencias
 
 ```bash
 npm install
 
 ```
 
-### 3. Levanta el servidor de desarrollo
+### 3. Ejecuta la aplicación
 
 ```bash
  npm run dev
