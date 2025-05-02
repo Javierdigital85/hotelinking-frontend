@@ -50,7 +50,7 @@ Estas rutas están protegidas mediante lógica de frontend, por lo tanto:
 
 ```bash
 git clone https://github.com/Javierdigital85/hotelinking-frontend
-cd hotelinking
+cd hotelinking-frontend
 ```
 
 ### 2. Clona el repositorio
