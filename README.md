@@ -49,7 +49,7 @@ Estas rutas están protegidas mediante lógica de frontend, por lo tanto:
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tuusuario/hotelinking.git
+git clone https://github.com/Javierdigital85/hotelinking-front
 cd hotelinking
 ```
 
