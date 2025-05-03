@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { setUser } from "../redux/user";
+import openEye from "../assets/OpenEye.svg";
+import closeEye from "../assets/CloseEye.svg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,6 +14,11 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [eye, setEye] = useState(false);
+
+  const handleClick = () => {
+    setEye(!eye);
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -42,31 +49,50 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className="flex justify-center items-center min-h-screen">
       <form
         onSubmit={handleSubmit}
-        className="p-4 max-w-md rounded-md  font-lato mx-auto"
+        className="p-8 max-w-md w-full rounded-lg shadow-lg"
       >
-        <h1>Login</h1>
+        <h2 className="text-3xl font-bold text-center mb-6">Login</h2>
         <input
           type="text"
           placeholder="email"
           onChange={handleChange}
-          className="border w-full p-2 rounded-lg mb-3 font-poppins px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border w-full p-2 px-3 h-10 rounded-lg mb-2 font-poppins focus:outline-none focus:ring-2 focus:ring-blue-500"
           name="email"
         />
-        <input
-          type="password"
-          placeholder="password"
-          onChange={handleChange}
-          className="border w-full p-2 rounded-lg mb-3 font-poppins px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          name="password"
-        />
+        <div className="relative mb-2">
+          <input
+            type={eye ? "text" : "password"}
+            placeholder="password"
+            onChange={handleChange}
+            className="border w-full p-2 rounded-lg mb-2 font-poppins px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            name="password"
+          />
+          <div
+            className="absolute inset-y-1 right-0 pr-3 mb-3 flex items-center cursor-pointer"
+            onClick={handleClick}
+          >
+            {eye ? (
+              <img
+                src={openEye}
+                className="w-5 h-5 filter brightness-0 invert"
+              />
+            ) : (
+              <img
+                src={closeEye}
+                className="w-5 h-5 filter brightness-0 invert"
+              />
+            )}
+          </div>
+        </div>
+
         <button className="border bg-blue-600 p-2 hover:bg-blue-500 rounded-md text-white w-full font-poppins">
           Send
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

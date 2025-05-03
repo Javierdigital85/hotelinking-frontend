@@ -31,7 +31,7 @@ const Navbar = () => {
         { withCredentials: true }
       );
       dispatch(setUser({ id: 0, name: "", email: "", token: "" }));
-      toast.success("You have logout");
+      toast.success("You have successfully logged out");
       navigate("/login");
     } catch (error) {
       console.log(error);

@@ -21,8 +21,7 @@ function App() {
         const res = await axios.get("http://localhost:8000/api/users/me", {
           withCredentials: true,
         });
-        console.log("Respuesta de la API:", res);
-        console.log("Respuesta de la API:", res.data);
+
         dispatch(setUser(res.data));
         console.log("la data", res.data);
       } catch (error) {

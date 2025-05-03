@@ -31,12 +31,12 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div className="flex justify-center items-center min-h-screen">
       <form
         onSubmit={handleSubmit}
-        className="p-4 max-w-md rounded-md  font-lato mx-auto"
+        className="p-4 max-w-md rounded-md font-lato mx-auto shadow-lg" 
       >
-        <h2>Register</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Register</h2>
         <input
           type="text"
           placeholder="name"
@@ -71,7 +71,7 @@ const Register = () => {
           Send
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
