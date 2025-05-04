@@ -99,7 +99,7 @@ const PromotionalCodes = () => {
                   onClick={() => handleSubmit(code.code)}
                   className={`${
                     code.redeem
-                      ? "bg-red-400 cursor-not-allowed"
+                      ? "bg-green-600 cursor-not-allowed"
                       : "bg-blue-600 hover:bg-blue-700"
                   } border p-2 rounded-md w-full font-poppins text-white transition`}
                 >
