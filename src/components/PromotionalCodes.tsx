@@ -5,12 +5,9 @@ import { setPromoCode } from "../redux/promoCode";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { User } from "../interfaces/User";
 
 const PromotionalCodes = () => {
-  interface User {
-    id: number;
-  }
-
   interface RootState {
     user: User;
     promoCodes: PromoCode[];
@@ -58,12 +55,12 @@ const PromotionalCodes = () => {
   }, [loadCodes]);
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
+    <div className="max-w-7xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center">
         Códigos Promocionales
       </h1>
       {userId ? (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-3">
           {promoCodes.map((code) => (
             <div
               key={code.id}
@@ -83,7 +80,6 @@ const PromotionalCodes = () => {
                     ? "bg-red-400 cursor-not-allowed"
                     : "bg-blue-600 hover:bg-blue-700"
                 } border p-2 rounded-md w-full font-poppins text-white transition`}
-                disabled={code.redeem}
               >
                 {code.redeem ? "Código Canjeado" : "Canjear Código"}
               </button>
@@ -92,10 +88,10 @@ const PromotionalCodes = () => {
         </div>
       ) : (
         <div className="h-screen flex items-center justify-center">
-        <h1 className="text-4xl text-center text-white-700">
-        ¡Regístrate e inicia sesión para descubrir promociones increíbles!
-        </h1>
-      </div>
+          <h1 className="text-4xl text-center text-white-700">
+            ¡Regístrate e inicia sesión para descubrir promociones increíbles!
+          </h1>
+        </div>
       )}
     </div>
   );

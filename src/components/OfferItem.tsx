@@ -3,15 +3,10 @@ import { Offer } from "../interfaces/Offer";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { User } from "../interfaces/User";
 
 interface Props {
   offer: Offer;
-}
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  token: string;
 }
 
 interface RootState {

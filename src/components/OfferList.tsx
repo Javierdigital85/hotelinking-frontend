@@ -3,12 +3,8 @@ import { useCallback, useEffect, useState } from "react";
 import { Offer } from "../interfaces/Offer";
 import OfferItem from "./OfferItem";
 import { useSelector } from "react-redux";
+import { User } from "../interfaces/User";
 
-interface User {
-  id: number;
-  name: string;
-  picture?: string; // Nueva propiedad para la imagen de perfil
-}
 interface RootState {
   user: User;
 }
@@ -36,7 +32,7 @@ const OfferList = () => {
     <div className="container mx-auto mt-5 p-10">
       {userId ? (
         <>
-          <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+          <h1 className="text-3xl font-bold text-center mb-8">
             Ofertas Disponibles
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -48,7 +44,7 @@ const OfferList = () => {
       ) : (
         <div className="h-screen flex items-center justify-center">
           <h1 className="text-4xl text-center text-white-700">
-          ¡Regístrate e inicia sesión para descubrir promociones increíbles!
+            ¡Regístrate e inicia sesión para descubrir promociones increíbles!
           </h1>
         </div>
       )}

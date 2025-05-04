@@ -5,13 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../redux/user";
 import { toast } from "react-toastify";
 import { MouseEvent } from "react";
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  token: string;
-}
+import { User } from "../interfaces/User";
 
 interface RootState {
   user: User;
