@@ -46,10 +46,10 @@ const OfferItem = ({ offer }: Props) => {
         <p className="text-gray-700 mb-4">{offer.details}</p>
         <button
           onClick={handleGeneratePromoCode}
-          className={`mt-2 px-4 py-2 rounded-lg transition-colors duration-300 ${
+          className={`mt-2 px-4 py-2 rounded-lg transition-colors duration-300  ${
             promoCode
               ? "bg-green-600"
-              : "bg-blue-600 text-white hover:bg-blue-700"
+              : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
           }`}
         >
           {promoCode ? `Código Generado` : "Generar código promocional"}

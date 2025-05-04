@@ -41,7 +41,7 @@ const PromotionalCodes = () => {
     try {
       console.log("Holaaaaa", promoCode);
       await axios.put(`http://localhost:8000/api/promo-code/${promoCode}`);
-      toast.success("Code redeem successfully!");
+      toast.success("Code redeemed successfully!");
       loadCodes();
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -100,7 +100,7 @@ const PromotionalCodes = () => {
                   className={`${
                     code.redeem
                       ? "bg-green-600 cursor-not-allowed"
-                      : "bg-blue-600 hover:bg-blue-700"
+                      : "bg-blue-600 hover:bg-blue-700 cursor-pointer"
                   } border p-2 rounded-md w-full font-poppins text-white transition`}
                 >
                   {code.redeem ? "Código Canjeado" : "Canjear Código"}

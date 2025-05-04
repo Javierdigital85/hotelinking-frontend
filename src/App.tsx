@@ -25,7 +25,7 @@ function App() {
         dispatch(setUser(res.data));
         console.log("la data", res.data);
       } catch (error) {
-        console.warn(error);
+        console.log(error);
       }
     };
     userName();
